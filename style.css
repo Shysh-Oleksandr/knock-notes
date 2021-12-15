@@ -33,12 +33,134 @@ a:hover{text-decoration: none;}
 ul li{list-style: none;}
 img{vertical-align: top;}
 
-h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
 body {
 	font-family: "Josefin Slab", serif;
-	height: 100vh;
-
+	background-color: #7bdaf3;
+	width: auto;
+	height: auto;
 	color: #000;
 	overflow-x: hidden;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	row-gap: 3.5rem;
+	column-gap: 2.1rem;
+	padding-top: 3rem;
+	margin: 1.5rem;
+}
+
+.note {
+	background-color: #fff;
+	min-height: 100px;
+	height: 300px;
+	max-height: 400px;
+	box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tools {
+	background-color: #9ec862;
+	display: flex;
+	justify-content: flex-end;
+	padding: 0.5rem;
+}
+
+.tools button {
+	background-color: transparent;
+	border: none;
+	color: #fff;
+	font-size: 1.1rem;
+	margin-left: 0.7rem;
+	transition: all 0.3s;
+}
+
+.tools button :hover {
+	color: rgb(228, 222, 222);
+}
+
+.btn-edit.active {
+	color: rgb(214, 54, 54);
+}
+
+.main {
+	min-height: 100px;
+	max-height: 400px;
+	height: 300px;
+	width: 100%;
+	overflow: hidden;
+	background-color: #eee;
+	padding-left: 0.5rem;
+	padding-top: 0.5rem;
+	font-size: 1.3rem;
+}
+
+.note textarea {
+	outline: none;
+	border: none;
+	min-height: 100px;
+	height: 300px;
+	max-height: 400px;
+	width: 100%;
+	font-size: 1.2rem;
+	resize: vertical;
+	padding-left: 0.5rem;
+	padding-top: 0.5rem;
+}
+
+.note .hidden {
+	display: none;
+} 
+
+.btn-add {
+	 background-color: #9ec862;
+	 border-radius: 3px;
+	 border: none;
+	 color: #fff;
+	 padding: 0.5rem 1rem;
+	 position: fixed;
+	 top: 1rem;
+	 right: 1rem;
+	 transition: all 0.3s;
+}
+
+.btn-add:hover {
+	background-color: #7b9b4d;
+}
+
+@media (max-width: 991.98px) {
+	html {
+		font-size: 13px;
+	}
+
+	.note, .main, .note textarea {
+		height: 270px;
+	}
+	
+}
+
+@media (max-width: 767.98px) {
+	html {
+		font-size: 12px;
+	}
+
+	body {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.note, .main, .note textarea {
+		height: 250px;
+	}
+}
+
+@media (max-width: 479.98px) {
+	html {
+		font-size: 11px;
+	}
+
+	body {
+		grid-template-columns: 1fr;
+	}
+
+	.note, .main, .note textarea {
+		height: 200px;
+	}
 }
